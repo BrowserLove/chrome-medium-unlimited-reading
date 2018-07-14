@@ -3,7 +3,7 @@
 
 https://chrome.google.com/webstore/detail/mediumcom-unlimited-readi/keckgflodjmhejpbhfbfoioonoeeckng
 
-Removes the article read limit of member-only content.
+Removes the article read limit of member-only content and related pop-ups.
 
 Executes only for articles with a member preview.
 
