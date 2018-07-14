@@ -1,0 +1,12 @@
+.postMeterBar,
+.openInAppButton,
+.js-stickyFooter,
+.js-upgradeMembershipAction,
+.butterBar--privacy,
+main + aside {
+	display: none;
+}
+
+html.u-overflowHidden {
+	overflow-y: scroll !important;
+}

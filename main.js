@@ -17,8 +17,6 @@ var fetchMemberContent = () => fetch(document.location)
 
 $(document).ready(function(){
   if(isMemberPreview()) {
-    getMemberPreviewNotice().hide();
-
     fetchMemberContent();
   }
 })

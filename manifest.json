@@ -1,10 +1,13 @@
 {
   "name": "Medium.com Unlimited Reading",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "manifest_version": 2,
   "description": "Removes the read limit of member-only content.",
   "content_scripts": [
     {
+      "css": [
+        "main.css"
+      ],
       "js": [
         "jquery.slim.min.js",
         "main.js"
