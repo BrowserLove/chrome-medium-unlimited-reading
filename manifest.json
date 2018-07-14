@@ -1,6 +1,6 @@
 {
   "name": "Medium.com Unlimited Reading",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "manifest_version": 2,
   "description": "Removes the read limit of member-only content and related pop-ups.",
   "content_scripts": [
