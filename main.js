@@ -1,9 +1,17 @@
-var getMemberPreviewNotice = function(selector) {
-  return $('div.ui-caption:contains("Member preview")');
+var getMemberPreviewNotice = function() {
+  var previewNotice = $('main + aside:contains("You read a lot")');
+
+  if(previewNotice.length == 0) {
+    previewNotice = $('main footer:contains("You read a lot")');
+  }
+
+  return previewNotice;
 }
 
 var isMemberPreview = function() {
-  return getMemberPreviewNotice().length > 0
+  var previewNotice = getMemberPreviewNotice();
+
+  return previewNotice.length > 0
 };
 
 var fetchMemberContent = () => fetch(document.location)
@@ -12,7 +20,8 @@ var fetchMemberContent = () => fetch(document.location)
   .then(newContent => $('main').html(newContent));
 
 $(document).ready(function(){
+  console.log(isMemberPreview())
   if(isMemberPreview()) {
-    fetchMemberContent().then(() => getMemberPreviewNotice().hide());
+    fetchMemberContent().then($('main + aside').hide());
   }
 })

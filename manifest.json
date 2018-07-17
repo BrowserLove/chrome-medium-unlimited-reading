@@ -13,7 +13,8 @@
         "main.js"
       ],
       "matches": [
-        "https://medium.com/*/*"
+        "https://medium.com/*/*",
+        "https://medium.com/*/*/*"
       ]
     }
   ],

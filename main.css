@@ -1,6 +1,5 @@
 .postMeterBar,
-.js-upgradeMembershipAction,
-main + aside {
+.js-upgradeMembershipAction {
 	display: none;
 }
 
