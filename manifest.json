@@ -1,6 +1,6 @@
 {
   "name": "Medium.com Unlimited Reading",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "manifest_version": 2,
   "description": "Removes the read limit of member-only content and related pop-ups.",
   "content_scripts": [
@@ -13,7 +13,7 @@
         "main.js"
       ],
       "matches": [
-        "https://medium.com/s/*"
+        "https://medium.com/*/*"
       ]
     }
   ],

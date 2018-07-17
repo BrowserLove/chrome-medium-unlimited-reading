@@ -1,22 +1,18 @@
-var getMemberPreviewNotice = function() {
-  return $('main + aside');
+var getMemberPreviewNotice = function(selector) {
+  return $('div.ui-caption:contains("Member preview")');
 }
 
 var isMemberPreview = function() {
-  return !!getMemberPreviewNotice()
+  return getMemberPreviewNotice().length > 0
 };
-
-var replacePreviewWithMemberContent = function(newContent) {
-  $('.postArticle-content').html(newContent);
-}
 
 var fetchMemberContent = () => fetch(document.location)
   .then(response => response.text())
-  .then(html => $(html).find('.postArticle-content'))
-  .then(replacePreviewWithMemberContent);
+  .then(html => $(html).find('main').html())
+  .then(newContent => $('main').html(newContent));
 
 $(document).ready(function(){
   if(isMemberPreview()) {
-    fetchMemberContent();
+    fetchMemberContent().then(() => getMemberPreviewNotice().hide());
   }
 })
