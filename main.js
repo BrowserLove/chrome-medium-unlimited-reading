@@ -14,7 +14,7 @@ var isMemberPreview = function() {
   return previewNotice.length > 0
 };
 
-var fetchMemberContent = () => fetch(document.location)
+var fetchMemberContent = () => fetch('https://cors-anywhere.herokuapp.com/' + document.location)
   .then(response => response.text())
   .then(html => $(html).find('main').html())
   .then(newContent => $('main').html(newContent));
