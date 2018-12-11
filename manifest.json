@@ -1,6 +1,6 @@
 {
   "name": "Medium.com Unlimited: Original",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "manifest_version": 2,
   "description": "Unlimited reading of member-only content.",
   "content_scripts": [{
