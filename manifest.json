@@ -94,7 +94,9 @@
       "https://uxplanet.org/*",
       "https://uxplanet.org/*/*",
       "https://writingcooperative.com/*",
-      "https://writingcooperative.com/*/*"
+      "https://writingcooperative.com/*/*",
+      "https://itnext.io/*",
+      "https://itnext.io/*/*"
     ]
   }],
   "icons": {
