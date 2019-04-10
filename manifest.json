@@ -1,6 +1,6 @@
 {
   "name": "Medium.com Unlimited Reading: Original",
-  "version": "0.5.1",
+  "version": "0.6.0",
   "manifest_version": 2,
   "description": "Unlimited reading of member-only content.",
   "content_scripts": [{
@@ -31,6 +31,7 @@
       "https://blog.growthhackers.com/*",
       "https://blog.growthhackers.com/*/*",
       "https://blog.mapbox.com/*",
+      "https://blog.mapbox.com/*/*",
       "https://blog.markgrowth.com/*",
       "https://blog.markgrowth.com/*/*",
       "https://blog.medium.com/*",
