@@ -21,25 +21,29 @@ const removeAnnoyingElements = () => {
   });
 }
 
-const fetchPremiumContent = callback =>
+const fetchPremiumContent = () =>
   fetch('https://cors-anywhere.herokuapp.com/' + document.location, {
     headers: new Headers({
       'Content-Type': 'text/html; charset=utf-8',
       'X-Requested-With': document.location.origin
     }),
-  }).then(response => response.text()).then(callback);
+  })
+  .then(response => response.text())
+  .then(text => {
+      const newContentMatch = text.match(/.*<main[^>]*?>(.*)<\/main>/i);
+
+      if(newContentMatch && newContentMatch.length > 0) {
+        return newContentMatch[1] ? newContentMatch[1] : newContentMatch[0];
+      }
+
+      return null;
+  });
 
 (() => {
   if(!isMedium() || !isMemberPreview()) return;
 
-  fetchPremiumContent(html => {
-    let newContent = html.match(/.*<main[^>]*?>(.*)<\/main>/i);
-    newContent = newContent ? (newContent[1] ? newContent[1] : newContent[0]) : null;
-
-    if(newContent) {
-      document.querySelector('main').innerHTML = newContent;
-
-      removeAnnoyingElements();
-    }
+  fetchPremiumContent().then(newContent => {
+    document.querySelector('main').innerHTML = newContent;
+    removeAnnoyingElements();
   });
 })();
