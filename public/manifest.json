@@ -1,0 +1,19 @@
+{
+  "name": "Medium.com Unlimited Reading: Original",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "description": "Unlimited reading of member-only content.",
+  "content_scripts": [{
+    "js": [
+      "main.min.js"
+    ],
+    "matches": [
+      "https://*/*"
+    ]
+  }],
+  "icons": {
+    "16": "medium-unlimited-16.png",
+    "48": "medium-unlimited-48.png",
+    "128": "medium-unlimited-128.png"
+  }
+}

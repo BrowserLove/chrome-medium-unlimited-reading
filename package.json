@@ -1,0 +1,23 @@
+{
+  "name": "chrome-medium-unlimited-reading",
+  "version": "1.0.0",
+  "repository": "git@github.com:Gyvastis/medium-unlimited-reading.git",
+  "author": "Vaidas Bagdonas <shibalba1@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack --mode production",
+    "watch": "webpack --watch --mode development --devtool source-map"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "babel-loader": "^8.0.5",
+    "copy-webpack-plugin": "^5.0.2",
+    "uglifyjs-webpack-plugin": "^2.1.2",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.0"
+  },
+  "dependencies": {
+    "jquery": "^3.4.0"
+  }
+}
