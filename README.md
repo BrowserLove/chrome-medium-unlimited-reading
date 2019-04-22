@@ -10,3 +10,5 @@ https://chrome.google.com/webstore/detail/mediumcom-unlimited-readi/keckgflodjmh
 
 Extremely lightweight & executes only for articles with a member preview.
 Fetches the article in the background __without any cookies__ and replaces the article content with the full version.  
+
+[![Buy me a coffee](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/OwfXVvb)
