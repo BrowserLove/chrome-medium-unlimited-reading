@@ -1,14 +1,20 @@
+const elementSelectors = {
+  message: '.medium-unlimited-message',
+  annoying: [
+    'footer .postFade',
+    'main + aside .postFade'
+  ]
+};
+
 module.exports = class MediumUnlimited {
-  constructor() {
-    this.annoyingElementSelectors = [
-      'footer .postFade',
-      'main + aside .postFade'
-    ];
+  constructor(pluginName) {
+    this.pluginName = pluginName;
     this.isLoading = false;
+    this.createMessageElement();
   }
 
   removeAnnoyingElements() {
-    this.annoyingElementSelectors.forEach(selector => {
+    elementSelectors.annoying.forEach(selector => {
       const element = document.querySelector(selector);
       if(element) element.parentNode.removeChild(element);
     });
@@ -36,6 +42,31 @@ module.exports = class MediumUnlimited {
     });
   }
 
+  createMessageElement() {
+    document.querySelector('main h1').insertAdjacentHTML(
+      'afterend',
+      `<div
+        style="
+          font-size: 13px;
+          margin: 5px 0;
+          opacity: 0.8;"
+        class="${elementSelectors.message.split('.')[1]}">
+       </div>`
+    );
+  }
+
+  getMessageElement() {
+    let messageElement = document.querySelector(elementSelectors.message);
+
+    if (!messageElement) {
+      this.createMessageElement();
+      messageElement = document.querySelector(elementSelectors.message);
+    }
+
+    return messageElement;
+  }
+
   setMessage(message) {
+    this.getMessageElement().innerHTML = `<strong>${this.pluginName}.</strong> ${message}`;
   }
 };
