@@ -43,7 +43,7 @@ module.exports = class MediumUnlimited {
   }
 
   createMessageElement() {
-    document.querySelector('main h1').insertAdjacentHTML(
+    document.querySelector('h1').insertAdjacentHTML(
       'afterend',
       `<div
         style="
