@@ -1,23 +1,35 @@
-const Medium = require('./medium');
-const MediumUnlimited = require('./medium-unlimited');
-const pluginName = 'Medium.com Unlimited Reading: Original';
+const { getTwitterRefererUrl } = require('./twitter.js');
+const mediumDomains = require('./medium_domains.js');
 
-(() => {
-  const medium = new Medium();
+const replaceMediumRefererWithTwitter = details => {
+  const newReferer = getTwitterRefererUrl();
+  let refererSet = false;
 
-  if(!medium.shouldBeUnlimited()) return;
-
-  const mediumUnlimited = new MediumUnlimited(pluginName);
-  mediumUnlimited.setMessage('Loading... 😴');
-
-  mediumUnlimited.fetchPremiumContent().then(newContent => {
-    if(newContent) {
-      medium.setContent(newContent);
-      mediumUnlimited.removeAnnoyingElements();
-      mediumUnlimited.setMessage('Loaded 😎');
+  details.requestHeaders.forEach((header, i) => {
+    if (header.name.toLowerCase() === 'referer') {
+      refererSet = true;
+      details.requestHeaders[i].value = newReferer;
     }
-    else {
-      mediumUnlimited.setMessage('Failed 😓 Try reloading the page.');
-    }
+
+    return header;
   });
-})();
+
+  if (!refererSet) {
+    details.requestHeaders.push({
+      name: 'Referer',
+      value: newReferer
+    });
+  }
+
+  return {
+    requestHeaders: details.requestHeaders,
+  };
+};
+
+chrome.webRequest.onBeforeSendHeaders.addListener(replaceMediumRefererWithTwitter, {
+  urls: mediumDomains.map(domain => `*://${domain}/*`),
+}, [
+  'blocking',
+  'requestHeaders',
+  'extraHeaders',
+]);
