@@ -7,9 +7,9 @@ const isProdEnv = process.env.NODE_ENV === 'production';
 const isDevEnv = !isProdEnv;
 
 module.exports = {
-  entry: './src/main.js',
+  entry: './src/background.js',
   output: {
-    filename: '[name].min.js',
+    filename: 'background.min.js',
     path: path.resolve(__dirname, 'build')
   },
   module: {

@@ -4,7 +4,7 @@
   "manifest_version": 2,
   "description": "Unlimited reading of member-only content.",
   "background": {
-    "scripts": ["main.min.js"]
+    "scripts": ["background.min.js"]
   },
   "permissions": [
     "webRequest",
