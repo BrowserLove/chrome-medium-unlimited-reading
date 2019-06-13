@@ -6,7 +6,7 @@
 ![rating](https://img.shields.io/chrome-web-store/rating/keckgflodjmhejpbhfbfoioonoeeckng.svg)
 ![version](https://img.shields.io/chrome-web-store/v/keckgflodjmhejpbhfbfoioonoeeckng.svg)
 
-Extremely lightweight & elegant solution if you want to read premium articles without a limit!
+Extremely lightweight & blazing-fast solution to read premium articles without a limit!
 
 [Get the extension!](https://chrome.google.com/webstore/detail/mediumcom-unlimited-readi/keckgflodjmhejpbhfbfoioonoeeckng)
 
