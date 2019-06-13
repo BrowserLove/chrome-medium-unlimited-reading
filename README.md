@@ -1,4 +1,4 @@
-# Medium.com Unlimited Reading: Original chrome extension
+# Medium.com Unlimited Reading chrome extension
 
 ## Removes the article read limit of member-only content. 
 
