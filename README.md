@@ -10,7 +10,7 @@ Extremely lightweight & elegant solution if you want to read premium articles wi
 
 [Get the extension!](https://chrome.google.com/webstore/detail/mediumcom-unlimited-readi/keckgflodjmhejpbhfbfoioonoeeckng)
 
-Replaces medium.com (and custom domain publications) requests referers to Twitter shortener urls (`https://t.co/*`). 
+Replaces medium.com (and custom domain publications) requests referers to Twitter shortener urls. 
 *This is not an exploit of a bug as Medium made it intentionally for visitors from Twitter to be able to read without restrictions.*
 
 [![Buy me a coffee](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/OwfXVvb)
