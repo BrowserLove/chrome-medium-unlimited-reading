@@ -3,7 +3,7 @@
   "version": "2.1.0",
   "manifest_version": 2,
   "description": "Unlimited reading of member-only content.",
-  "content_scripts": {
+  "content_scripts": [{
     "matches": [
       "*://*.medium.com/*",
       "*://eand.co/*",
@@ -47,7 +47,7 @@
     "js": ["content.min.js"],
     "run_at" : "document_idle",
     "all_frames" : false
-  },
+  }],
   "background": {
     "scripts": ["background.min.js"]
   },
