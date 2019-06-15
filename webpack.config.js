@@ -39,9 +39,14 @@ module.exports = {
     minimize: isProdEnv
   },
   plugins: [
-    new UglifyJSPlugin({sourceMap: isDevEnv}),
-      new CopyPlugin([
-        { from: 'public', to: '.' },
-      ]),
+    new UglifyJSPlugin({
+      sourceMap: isDevEnv,
+      uglifyOptions: {
+        mangle: false,
+      },
+    }),
+    new CopyPlugin([
+      { from: 'public', to: '.' },
+    ]),
   ]
 };
