@@ -7,9 +7,12 @@ const isProdEnv = process.env.NODE_ENV === 'production';
 const isDevEnv = !isProdEnv;
 
 module.exports = {
-  entry: './src/background.js',
+  entry: {
+    'background': './src/background.js',
+    'content': './src/content.js'
+  },
   output: {
-    filename: 'background.min.js',
+    filename: '[name].min.js',
     path: path.resolve(__dirname, 'build')
   },
   module: {
@@ -37,8 +40,8 @@ module.exports = {
   },
   plugins: [
     new UglifyJSPlugin({sourceMap: isDevEnv}),
-    new CopyPlugin([
-      { from: 'public', to: '.' },
-    ]),
+      new CopyPlugin([
+        { from: 'public', to: '.' },
+      ]),
   ]
 };
