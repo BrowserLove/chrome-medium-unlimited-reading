@@ -9,7 +9,6 @@ const isDevEnv = !isProdEnv;
 module.exports = {
   entry: {
     'background': './src/background.js',
-    'content': './src/content.js'
   },
   output: {
     filename: '[name].min.js',
