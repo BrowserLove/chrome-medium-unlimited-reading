@@ -18,7 +18,9 @@ Replaces medium.com (and custom domain publications) requests referers to Twitte
 ### Q & A
 
 **Q:** Is it legal? 
+
 **A:** [See what Medium staff say](https://twitter.com/ev/status/1100899021621583872)
 
 **Q:** I've found a Medium publication that doesn't work with the extension. How can I help? 
+
 **A:** *The use of custom domains for publications is deprecated* but the extension does support it. Add it to the end of the domain lists in `public/manifest.json` & `src/medium_domains.js` (as per example) and make a pull request. Thank you for your contribution!
